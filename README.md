@@ -1,30 +1,21 @@
-# React + TypeScript + Vite
+# Psel front
+### Este é um aplicativo de notícias que utiliza dados do IBGE para fornecer informações atualizadas sobre estatísticas econômicas, sociais e demográficas do Brasil.
+- [Acesse a página do projeto]()
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Funcionalidades
+Este aplicativo possui quatro páginas principais: 'Mais Recentes', 'Favoritos', 'Release' e 'Notícia'. Os usuários podem visualizar as notícias mais recentes, marcar notícias como favoritas, ler comunicados de imprensa do IBGE e acessar notícias sobre uma variedade de temas.
 
-Currently, two official plugins are available:
+## Tecnologias Utilizadas
+- Vite
+- React
+  - React router dom
+  - React icons
+- TypeScript
+- Jest
+- Vitest
+- CSS Module
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Como Executar o Projeto
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Licença
+- Licença MIT
