@@ -1,0 +1,35 @@
+.container {
+  margin: 40px auto;
+  align-items: center;
+  width: 80%;
+}
+
+.latestNews {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.latestNews img {
+  width: 800px;
+}
+
+.descriptions {
+  width: 40%;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 10px;
+}
+
+.descriptions h1 {
+  font-size: 3em;
+}
+
+.descriptions div {
+  display: flex;
+  justify-content: space-between;
+}
+
+

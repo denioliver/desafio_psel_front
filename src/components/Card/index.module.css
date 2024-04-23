@@ -1,0 +1,89 @@
+.containe {
+  width: 80%;
+  margin: 30px auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.containeBtn {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.containeFavoritar {
+  width: 100%;
+  text-align: end;
+}
+
+.btnFavoritar {
+  margin: 20px;
+  padding: 5px;
+  
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 430px;
+  height: 430px;
+  padding: 20px;
+  margin-bottom: 40px;
+  background-color: white;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.233);
+  border-radius: 5px;
+}
+
+.card h1 {
+  height: 100px;
+  margin: 7px;
+  padding: 10px;
+  font-size: 1.4em;
+}
+
+.card p {
+  margin: 7px;
+  padding: 10px;
+}
+
+
+
+.cardList {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 300px;
+  padding: 20px;
+  margin-bottom: 40px;
+  background-color: white;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.233);
+  border-radius: 5px;
+}
+
+.cardList img {
+  width: 100%;
+}
+
+.descritionsList {
+  width: 50%;
+}
+
+.descritionsList p {
+  margin: 20px;
+}
+
+.containeBtnMais {
+  display: flex;
+  justify-content: center;
+}
+
+.btnMais {
+  color: red;
+  border: 1px solid red;
+  padding: 15px;
+  margin-top: -40px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
