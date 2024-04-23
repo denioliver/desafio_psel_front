@@ -1,0 +1,16 @@
+.btn a {
+  background-color: #05D465;
+  padding: 10px 18px;
+  border-radius: 7px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.392);
+  text-decoration: none;
+  color: rgb(25, 23, 23);
+  font-weight: 700;
+}
+
+.btn a:hover {
+  background-color: #2a9b5f;
+  font-size: 1.05em;
+  color: white;
+  transition-duration: 0.6s;
+}

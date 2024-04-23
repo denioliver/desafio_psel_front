@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Poller+One&display=swap');
+
+.containerTitle {
+  display: flex;
+  align-items: center;
+  background-color: #0E0E0E;
+  color: #FFFFFF;
+  font-family: "Poller One", serif;
+  font-size: 1.3em;
+}
+
+.containerTitle div {
+  text-align: center;
+  width: 100%;
+}
+
+.logo {
+    width: 120px;
+}
+
+.containerNav {
+  margin: auto;
+  padding: 12px;
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+}
