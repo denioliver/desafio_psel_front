@@ -1,5 +1,4 @@
 import { useContext, useEffect, useState } from 'react';
-import { GrFavorite } from 'react-icons/gr';
 import { MdOutlineFavorite } from 'react-icons/md';
 import UserContext from '../../context/UserContext';
 import style from './index.module.css';
