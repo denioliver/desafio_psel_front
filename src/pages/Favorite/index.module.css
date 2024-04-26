@@ -1,0 +1,107 @@
+.containe {
+    width: 80%;
+    margin: 30px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  
+  .containeBtn {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  
+  .containeFavoritar {
+    width: 100%;
+    text-align: end;
+  }
+
+  .containeFavoritar button {
+    color: red;
+    font-size: 1.7em;
+    border:  none;
+    background-color: transparent;
+    padding: 6px;
+    margin: 6px;
+    cursor: pointer;
+  }
+  
+  .btnFavoritar {
+    margin: 20px;
+    padding: 5px;
+    
+  }
+  
+  .Favorite {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 430px;
+    height: 430px;
+    padding: 20px;
+    margin-bottom: 40px;
+    background-color: white;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.233);
+    border-radius: 5px;
+  }
+  
+  .Favorite h1 {
+    height: 100px;
+    margin: 7px;
+    padding: 10px;
+    font-size: 1.4em;
+  }
+  
+  .Favorite p {
+    margin: 7px;
+    padding: 10px;
+  }
+  
+  
+  
+  .FavoriteList {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: auto;
+    padding: 20px;
+    margin-bottom: 40px;
+    background-color: white;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.233);
+    border-radius: 5px;
+  }
+  
+  .FavoriteList img {
+    width: 90%;
+  }
+  
+  .descritionsList {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .descritionsList h1 {
+    font-size: 1.5em;
+  }
+  
+  .descritionsList p {
+    margin: 20px 0;
+  }
+  
+  .containeBtnMais {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .btnMais {
+    color: red;
+    border: 1px solid red;
+    padding: 15px;
+    margin-top: -40px;
+    margin-bottom: 20px;
+    cursor: pointer;
+  }
+  

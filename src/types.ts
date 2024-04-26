@@ -26,4 +26,5 @@ export type FavoriteType = {
   intro: string,
   destaque: boolean,
   data_publicacao: string,
+  link: string
 };

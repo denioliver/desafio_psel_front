@@ -83,6 +83,7 @@ function Card() {
                     intro: key.introducao,
                     destaque: key.destaque,
                     data_publicacao: key.data_publicacao,
+                    link: key.link,
                   } }
                 />
               </div>

@@ -23,6 +23,7 @@ function BtnFavorite(props: BtnFavoriteProps) {
         intro: cardDate.intro,
         destaque: cardDate.destaque,
         data_publicacao: cardDate.data_publicacao,
+        link: cardDate.link,
       };
 
       let favoritesArray: FavoriteType[];
