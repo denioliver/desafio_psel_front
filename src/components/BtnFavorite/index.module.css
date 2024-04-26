@@ -1,0 +1,12 @@
+.container {
+  display: block;
+	justify-content: center;
+	align-items: center;
+}
+
+.container button {
+	color: red;
+		font-size: 1.7em;
+		border:  none;
+		background-color: transparent;
+}

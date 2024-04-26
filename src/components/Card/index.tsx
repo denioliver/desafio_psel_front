@@ -2,6 +2,7 @@ import { useContext, useState } from 'react';
 import UserContext from '../../context/UserContext';
 import style from './index.module.css';
 import BtnRead from '../BtnRead';
+import BtnFavorite from '../BtnFavorite';
 
 function Card() {
   const [visibleNewsCount, setVisibleNewsCount] = useState(6);
@@ -9,12 +10,10 @@ function Card() {
   const context = useContext(UserContext);
   const { news, inList } = context;
 
-  function parseImageURL(imageJSON: string, imageType: string) {
-    if (!imageJSON) return ''; // Retorna uma string vazia se não houver imagem
-    const imageObj = JSON.parse(imageJSON);
-    const imagePath = imageObj[imageType];
-    if (!imagePath) return ''; // Retorna uma string vazia se o caminho da imagem for inválido
-    return `http://agenciadenoticias.ibge.gov.br/${imagePath}`; // Constrói a URL completa
+  function parseImageURL(imagens: string, chaveImagens: string) {
+    const imageObj = JSON.parse(imagens);
+    const imagePath = imageObj[chaveImagens];
+    return `http://agenciadenoticias.ibge.gov.br/${imagePath}`;
   }
 
   function parseDateString(dateString: string) {
@@ -49,45 +48,43 @@ function Card() {
     <div>
       <div className={ style.containe }>
         {
-        news.slice(1, visibleNewsCount + 1).map((element) => (
+        news.slice(1, visibleNewsCount + 1).map((key) => (
           <div
-            key={ element.id }
+            key={ key.id }
             className={ inList ? style.card : style.cardList }
           >
-            <div>
+            <div style={ { width: '50%' } }>
               {!inList && (
                 <img
-                  src={ parseImageURL(
-                    element.imagens,
-                    'image_intro'
-                    || 'image_fulltext'
-                    || 'image_intro_alt'
-                    || 'image_intro_caption'
-                    || 'float_fulltext'
-                    || 'image_fulltext_alt'
-                    || 'image_fulltext_caption',
-                  ) }
-                  alt={ element.titulo }
+                  src={ parseImageURL(key.imagens, 'image_fulltext') }
+                  alt={ key.titulo }
                   className={ inList ? style.img : style.imgList }
                 />
               )}
             </div>
-            <div className={ inList ? style.descritions : style.descritionsList }>
-              <h1>{element.titulo}</h1>
-              <p>{element.introducao}</p>
-              <p>{element.destaque}</p>
+            <div
+              className={ inList ? style.descritions : style.descritionsList }
+            >
+              <h1>{key.titulo}</h1>
+              <p>{key.introducao}</p>
+              <p>{key.destaque}</p>
               <div className={ style.containeBtn }>
                 <p>
-                  {calculateDaysSincePublication(element.data_publicacao)}
+                  {calculateDaysSincePublication(key.data_publicacao)}
                 </p>
-                <BtnRead link={ element.link } />
+                <BtnRead link={ key.link } />
               </div>
               <div className={ style.containeFavoritar }>
-                <button
-                  className={ style.btnFavoritar }
-                >
-                  Favoritar
-                </button>
+                <BtnFavorite
+                  cardDate={ {
+                    id: key.id,
+                    img: key.imagens,
+                    title: key.titulo,
+                    intro: key.introducao,
+                    destaque: key.destaque,
+                    data_publicacao: key.data_publicacao,
+                  } }
+                />
               </div>
             </div>
           </div>

@@ -18,3 +18,12 @@ export type ContextType = {
   inList: boolean,
   handleInList: () => void,
 };
+
+export type FavoriteType = {
+  id: number,
+  img: string,
+  title: string,
+  intro: string,
+  destaque: boolean,
+  data_publicacao: string,
+};

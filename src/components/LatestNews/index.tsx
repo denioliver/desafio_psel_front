@@ -2,6 +2,7 @@ import { useContext } from 'react';
 import UserContext from '../../context/UserContext';
 import style from './index.module.css';
 import BtnRead from '../BtnRead';
+import BtnFavorite from '../BtnFavorite';
 
 function LatestNews() {
   const context = useContext(UserContext);
@@ -61,26 +62,26 @@ function LatestNews() {
             key={ latestNews.id }
             className={ style.latestNews }
           >
-            <div>
+            <div style={ { width: '50%' } }>
               <img
-                src={ parseImageURL(
-                  latestNews.imagens,
-                  'image_intro'
-                  || 'image_fulltext'
-                  || 'image_intro_alt'
-                  || 'image_intro_caption'
-                  || 'float_fulltext'
-                  || 'image_fulltext_alt'
-                  || 'image_fulltext_caption',
-                ) }
+                src={ parseImageURL(latestNews.imagens, 'image_fulltext') }
                 alt={ latestNews.titulo }
               />
             </div>
-            <div className={ style.descriptions }>
+            <div className={ style.descriptions } style={ { width: '50%' } }>
               <div>
                 <p style={ { color: 'red' } }>Notícia mais recente</p>
                 <div className={ style.containeFavoritar }>
-                  <button className={ style.btnFavoritar }>Favoritar</button>
+                  <BtnFavorite
+                    cardDate={ {
+                      id: latestNews.id,
+                      img: latestNews.imagens,
+                      title: latestNews.titulo,
+                      intro: latestNews.introducao,
+                      destaque: latestNews.destaque,
+                      data_publicacao: latestNews.data_publicacao,
+                    } }
+                  />
                 </div>
               </div>
               <h1>{latestNews.titulo}</h1>
