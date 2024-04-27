@@ -80,6 +80,7 @@ function LatestNews() {
                       intro: latestNews.introducao,
                       destaque: latestNews.destaque,
                       data_publicacao: latestNews.data_publicacao,
+                      link: latestNews.link,
                     } }
                   />
                 </div>
