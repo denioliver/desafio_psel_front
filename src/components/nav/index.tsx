@@ -12,8 +12,8 @@ function Nav() {
     <div className={ style.containe }>
       <nav className={ style.nav }>
         <Link to="/">Mais recentes </Link>
-        <Link to="/">Release </Link>
-        <Link to="/">Notícia </Link>
+        <Link to="/release">Release </Link>
+        <Link to="/noticia">Notícia </Link>
         <Link to="/favorite">Favoritas </Link>
       </nav>
       <button

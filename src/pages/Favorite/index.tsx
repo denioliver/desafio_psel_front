@@ -4,6 +4,7 @@ import UserContext from '../../context/UserContext';
 import style from './index.module.css';
 import { FavoriteType } from '../../types';
 import BtnRead from '../../components/BtnRead';
+import Header from '../../components/Header';
 
 function Favorite() {
   const [favorites, setFavorites] = useState<FavoriteType[]>([]);
@@ -80,48 +81,59 @@ function Favorite() {
     return `${diffDays} dias atrás.`;
   }
 
+  if (favorites.length === 0) {
+    return (
+      <div>
+        <Header />
+        <div style={ { width: '100%', textAlign: 'center', margin: '40px auto' } }>
+          <h1>Nenhum favorito foi adicionado.</h1>
+        </div>
+      </div>
+    );
+  }
   return (
     <div>
+      <Header />
       <div className={ style.containe }>
         {
-        favorites.map((key) => (
-          <div
-            key={ key.id }
-            className={ inList ? style.Favorite : style.FavoriteList }
-          >
-            <div style={ { width: '50%' } }>
-              {!inList && (
-                <img
-                  src={ parseImageURL(key.img, 'image_fulltext') }
-                  alt={ key.title }
-                  className={ inList ? style.img : style.imgList }
-                />
-              )}
-            </div>
+          favorites.map((key) => (
             <div
-              className={ inList ? style.descritions : style.descritionsList }
+              key={ key.id }
+              className={ inList ? style.Favorite : style.FavoriteList }
             >
-              <h1>{key.title}</h1>
-              <p>{key.intro}</p>
-              <p>{key.destaque}</p>
-              <div className={ style.containeBtn }>
-                <p>
-                  {calculateDaysSincePublication(key.data_publicacao)}
-                </p>
-                <BtnRead link={ key.link } />
+              <div style={ { width: '50%' } }>
+                {!inList && (
+                  <img
+                    src={ parseImageURL(key.img, 'image_fulltext') }
+                    alt={ key.title }
+                    className={ inList ? style.img : style.imgList }
+                  />
+                )}
               </div>
-              <div className={ style.containeFavoritar }>
-                <button
-                  onClick={ () => handleClickUnFavorite(key.id) }
-                  aria-label="Desfavoritar"
-                >
-                  <MdOutlineFavorite />
-                </button>
+              <div
+                className={ inList ? style.descritions : style.descritionsList }
+              >
+                <h1>{key.title}</h1>
+                <p>{key.intro}</p>
+                <p>{key.destaque}</p>
+                <div className={ style.containeBtn }>
+                  <p>
+                    {calculateDaysSincePublication(key.data_publicacao)}
+                  </p>
+                  <BtnRead link={ key.link } />
+                </div>
+                <div className={ style.containeFavoritar }>
+                  <button
+                    onClick={ () => handleClickUnFavorite(key.id) }
+                    aria-label="Desfavoritar"
+                  >
+                    <MdOutlineFavorite />
+                  </button>
+                </div>
               </div>
             </div>
-          </div>
-        ))
-      }
+          ))
+        }
       </div>
     </div>
   );
