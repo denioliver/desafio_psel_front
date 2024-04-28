@@ -101,14 +101,12 @@ function Favorite() {
               key={ key.id }
               className={ inList ? style.Favorite : style.FavoriteList }
             >
-              <div style={ { width: '50%' } }>
-                {!inList && (
-                  <img
-                    src={ parseImageURL(key.img, 'image_fulltext') }
-                    alt={ key.title }
-                    className={ inList ? style.img : style.imgList }
-                  />
-                )}
+              <div>
+                <img
+                  src={ parseImageURL(key.img, 'image_fulltext') }
+                  alt={ key.title }
+                  className={ inList ? style.img : style.imgList }
+                />
               </div>
               <div
                 className={ inList ? style.descritions : style.descritionsList }

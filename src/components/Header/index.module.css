@@ -26,3 +26,16 @@
   justify-content: space-between;
   background-color: white;
 }
+
+@media (max-width: 650px){
+  .containerTitle {
+    font-size: 0.8em;
+  }
+
+  .logo {
+    width: 70px;
+  }
+  .containerNav {
+    width: 95%;
+  }
+}

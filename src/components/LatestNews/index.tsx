@@ -62,13 +62,13 @@ function LatestNews() {
             key={ latestNews.id }
             className={ style.latestNews }
           >
-            <div style={ { width: '50%' } }>
+            <div>
               <img
                 src={ parseImageURL(latestNews.imagens, 'image_fulltext') }
                 alt={ latestNews.titulo }
               />
             </div>
-            <div className={ style.descriptions } style={ { width: '50%' } }>
+            <div className={ style.descriptions }>
               <div>
                 <p style={ { color: 'red' } }>Notícia mais recente</p>
                 <div className={ style.containeFavoritar }>

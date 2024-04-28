@@ -13,7 +13,7 @@ function BtnRead(props: BtnProps) {
         target="_blank"
         rel="noreferrer"
       >
-        Leia a Notícia aqui
+        Leia a notícia aqui
       </a>
     </div>
 

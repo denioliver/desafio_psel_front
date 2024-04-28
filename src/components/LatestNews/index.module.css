@@ -8,9 +8,10 @@
 }
 
 .latestNews {
+  width: 100%;
   display: flex;
-
   align-items: center;
+  height: auto;
 }
 
 .latestNews img {
@@ -18,8 +19,8 @@
 }
 
 .descriptions {
-  width: 300px;
-  height: 350px;
+  width: 95%;
+  height: auto;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -35,4 +36,28 @@
   justify-content: space-between;
 }
 
+@media (max-width: 900px){
+  .container{
+    width: 95%;
+  }
+  .latestNews {
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .descriptions h1 {
+    font-size: 1.1em;
+  }
 
+  .descriptions div {
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+
+  .descriptions p {
+    font-size: 0.7em;
+    padding-top: 15px;
+  }
+}
