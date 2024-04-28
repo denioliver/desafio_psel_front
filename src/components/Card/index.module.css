@@ -28,12 +28,16 @@
   flex-direction: column;
   align-items: center;
   width: 430px;
-  height: 430px;
+  height: auto;
   padding: 20px;
   margin-bottom: 40px;
   background-color: white;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.233);
   border-radius: 5px;
+}
+
+.img {
+  display: none;
 }
 
 .card h1 {
@@ -93,4 +97,76 @@
   margin-top: -40px;
   margin-bottom: 20px;
   cursor: pointer;
+}
+
+
+@media (max-width: 900px){
+  .containe {
+    width: 95%;
+    justify-content: center;
+  }
+
+  .btnFavoritar {
+    margin: 10px;
+  }
+  
+  .card {
+    width: 95%;
+    padding: 10px;
+    text-align: center;
+  }
+
+  .img {
+    display: block;
+    width: 90%;
+    margin: 15px auto;
+  }
+
+  .card h1 {
+    height: 100px;
+    margin: 7px;
+    padding: px;
+    font-size: 1.1em;
+  }
+  
+  .card p {
+    font-size: 0.7em;
+    margin: 3px;
+    padding: 5px;
+  }
+  
+  
+  
+  .cardList {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: auto;
+    padding: 20px;
+    margin-bottom: 40px;
+    background-color: white;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.233);
+    border-radius: 5px;
+  }
+  
+  .cardList img {
+    width: 90%;
+  }
+  
+  .descritionsList {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .descritionsList h1 {
+    font-size: 1.1em;
+  }
+  
+  .descritionsList p {
+    margin: 10px 0;
+  }
 }

@@ -53,14 +53,12 @@ function Card() {
             key={ key.id }
             className={ inList ? style.card : style.cardList }
           >
-            <div style={ { width: '50%' } }>
-              {!inList && (
-                <img
-                  src={ parseImageURL(key.imagens, 'image_fulltext') }
-                  alt={ key.titulo }
-                  className={ inList ? style.img : style.imgList }
-                />
-              )}
+            <div>
+              <img
+                src={ parseImageURL(key.imagens, 'image_fulltext') }
+                alt={ key.titulo }
+                className={ inList ? style.img : style.imgList }
+              />
             </div>
             <div
               className={ inList ? style.descritions : style.descritionsList }
