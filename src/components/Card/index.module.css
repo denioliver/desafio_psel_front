@@ -41,7 +41,7 @@
 }
 
 .card h1 {
-  height: 100px;
+  height: auto;
   margin: 7px;
   padding: 10px;
   font-size: 1.4em;
@@ -123,7 +123,7 @@
   }
 
   .card h1 {
-    height: 100px;
+    height: auto;
     margin: 7px;
     padding: px;
     font-size: 1.1em;
