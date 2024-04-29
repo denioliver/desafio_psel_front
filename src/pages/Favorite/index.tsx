@@ -24,7 +24,7 @@ function Favorite() {
       }
     };
     data();
-  }, [favorites]);
+  }, []);
 
   const handleClickUnFavorite = (idToRemove: number) => {
     // Obtém os favoritos do localStorage
@@ -111,17 +111,17 @@ function Favorite() {
               <div
                 className={ inList ? style.descritions : style.descritionsList }
               >
-                <h1>{key.title}</h1>
-                <p>{key.intro}</p>
-                <p>{key.destaque}</p>
+                <h1 data-testid={ `tituloFavorito-${key.id}` }>{key.title}</h1>
+                <p data-testid={ `introFavorito-${key.id}` }>{key.intro}</p>
                 <div className={ style.containeBtn }>
                   <p>
                     {calculateDaysSincePublication(key.data_publicacao)}
                   </p>
-                  <BtnRead link={ key.link } />
+                  <BtnRead dataTestId={ `btnRead-${key.id}` } link={ key.link } />
                 </div>
                 <div className={ style.containeFavoritar }>
                   <button
+                    data-testid="desfavoritar"
                     onClick={ () => handleClickUnFavorite(key.id) }
                     aria-label="Desfavoritar"
                   >

@@ -33,8 +33,6 @@ function UserProvider({ children }: NewsProviderProps) {
     }
   };
 
-  console.log(news);
-
   const contextValue: ContextType = {
     news,
     inList,

@@ -13,7 +13,6 @@ function LatestNews() {
     .sort((a, b) => Number(new Date(b.data_publicacao))
     - Number(new Date(a.data_publicacao)));
 
-  // Selecionar apenas a notícia mais recente (primeiro elemento após ordenação)
   const latestNews = sortedNews[0];
 
   let daysSincePublication = '';
@@ -32,7 +31,9 @@ function LatestNews() {
 
   // Função auxiliar para converter a string de data no formato "DD/MM/AAAA HH:MM:SS" para um objeto Date
   function parseDateString(dateString: string) {
+    if (!dateString) return new Date();
     const [datePart, timePart] = dateString.split(' ');
+    if (!datePart || !timePart) return new Date();
     const [day, month, year] = datePart.split('/');
     const [hour, minute, second] = timePart.split(':');
     return new Date(
@@ -47,11 +48,11 @@ function LatestNews() {
 
   // Função auxiliar para extrair a URL da imagem a partir do JSON
   function parseImageURL(imageJSON: string, imageType: string) {
-    if (!imageJSON) return ''; // Retorna uma string vazia se não houver imagem
+    if (!imageJSON) return '';
     const imageObj = JSON.parse(imageJSON);
     const imagePath = imageObj[imageType];
-    if (!imagePath) return ''; // Retorna uma string vazia se o caminho da imagem for inválido
-    return `http://agenciadenoticias.ibge.gov.br/${imagePath}`; // Constrói a URL completa
+    if (!imagePath) return '';
+    return `http://agenciadenoticias.ibge.gov.br/${imagePath}`;
   }
 
   return (
@@ -66,12 +67,20 @@ function LatestNews() {
               <img
                 src={ parseImageURL(latestNews.imagens, 'image_fulltext') }
                 alt={ latestNews.titulo }
+                data-testid={ `img-${latestNews.id}` }
               />
             </div>
             <div className={ style.descriptions }>
               <div>
-                <p style={ { color: 'red' } }>Notícia mais recente</p>
-                <div className={ style.containeFavoritar }>
+                <p
+                  data-testid="noticia-recente"
+                  style={ { color: 'red' } }
+                >
+                  Notícia mais recente
+                </p>
+                <div
+                  className={ style.containeFavoritar }
+                >
                   <BtnFavorite
                     cardDate={ {
                       id: latestNews.id,
@@ -82,15 +91,18 @@ function LatestNews() {
                       data_publicacao: latestNews.data_publicacao,
                       link: latestNews.link,
                     } }
+                    testId={ `btnFavorit-${latestNews.id}` }
                   />
                 </div>
               </div>
-              <h1>{latestNews.titulo}</h1>
-              <p>{latestNews.introducao}</p>
-              <p>{latestNews.destaque}</p>
-              <div>
-                <p>{daysSincePublication}</p>
-                <BtnRead link={ latestNews.link } />
+              <h1 data-testid={ `titulo-${latestNews.id}` }>{latestNews.titulo}</h1>
+              <p data-testid={ `introdução-${latestNews.id}` }>{latestNews.introducao}</p>
+              <div style={ { marginTop: '15px' } }>
+                <p data-testid={ `data-${latestNews.id}` }>{daysSincePublication}</p>
+                <BtnRead
+                  dataTestId={ `btnRead-${latestNews.id}` }
+                  link={ latestNews.link }
+                />
               </div>
             </div>
           </div>

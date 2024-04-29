@@ -17,6 +17,7 @@ function Nav() {
         <Link to="/favorite">Favoritas </Link>
       </nav>
       <button
+        data-testid="inList"
         className={ style.btn }
         onClick={ handleInList }
       >

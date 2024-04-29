@@ -6,10 +6,11 @@ import { FavoriteType } from '../../types';
 
 interface BtnFavoriteProps {
   cardDate: FavoriteType,
+  testId: string,
 }
 
 function BtnFavorite(props: BtnFavoriteProps) {
-  const { cardDate } = props;
+  const { cardDate, testId } = props;
   const [isFavorite, setIsFavorite] = useState(false);
 
   const handleClickFavorite = () => {
@@ -57,7 +58,10 @@ function BtnFavorite(props: BtnFavoriteProps) {
 
   return (
     <div className={ style.container }>
-      <button onClick={ handleClickFavorite }>
+      <button
+        data-testid={ testId }
+        onClick={ handleClickFavorite }
+      >
         {isFavorite ? <MdOutlineFavorite /> : <GrFavorite />}
       </button>
     </div>
