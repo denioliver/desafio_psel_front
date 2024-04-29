@@ -55,6 +55,7 @@ function Card() {
           >
             <div>
               <img
+                data-testid={ `img-${key.id}` }
                 src={ parseImageURL(key.imagens, 'image_fulltext') }
                 alt={ key.titulo }
                 className={ inList ? style.img : style.imgList }
@@ -63,14 +64,13 @@ function Card() {
             <div
               className={ inList ? style.descritions : style.descritionsList }
             >
-              <h1>{key.titulo}</h1>
-              <p>{key.introducao}</p>
-              <p>{key.destaque}</p>
+              <h1 data-testid={ `titulo-${key.id}` }>{key.titulo}</h1>
+              <p data-testid={ `intro-${key.id}` }>{key.introducao}</p>
               <div className={ style.containeBtn }>
                 <p>
                   {calculateDaysSincePublication(key.data_publicacao)}
                 </p>
-                <BtnRead link={ key.link } />
+                <BtnRead dataTestId={ `data-${key.id}` } link={ key.link } />
               </div>
               <div className={ style.containeFavoritar }>
                 <BtnFavorite
@@ -83,6 +83,7 @@ function Card() {
                     data_publicacao: key.data_publicacao,
                     link: key.link,
                   } }
+                  testId={ `test-id-${key.id}` }
                 />
               </div>
             </div>
